@@ -1,19 +1,19 @@
 ##### Chapter 5 ##### 
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/python:3.6.2-stretch-browsers
-    steps:
-      - checkout
-      - run: pip install -r requirements/dev.txt
+# version: 2
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/python:3.6.2-stretch-browsers
+#     steps:
+#       - checkout
+#       - run: pip install -r requirements/dev.txt
 
-# deployment:
-#   dockerhub:
-#     branch: master
-#     commands:
-#       - $DOCKER_HUB_TRIGGER
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
 
-# test:
-#   override:   
-#     - mocha 
+test:
+  override:   
+    - mocha 
